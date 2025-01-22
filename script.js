@@ -11,6 +11,11 @@ const trucks = [
     { nome: "Truck de 10.4m", comprimento: 10.4, largura: 2.5, alturaMaxima: 4, quantidadeMaxima: 20 },
 ];
 
+// Dimensões de outros cadastrados
+const outros = [
+    { nome: "Saveiro", comprimento: 1.60, largura:1.0, alturaMaxima:1.2, quantidadeMaxima: 1 }
+];
+
 document.getElementById("pallet-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
