@@ -60,7 +60,7 @@ document.getElementById("pallet-form").addEventListener("submit", function (e) {
         const camadas = Math.floor(veiculo.alturaMaxima / height);
 
         // Calcula a cubagem total (m³)
-        const cubagemTotal = length * width * height;
+        const cubagemTotal = length * width * height * totalPallets;
 
         // Verifica a capacidade na largura (quantos pallets cabem lado a lado na largura do veículo)
         const cabeDoisLados = (width * 2 <= veiculo.largura);
