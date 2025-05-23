@@ -1,14 +1,14 @@
 // Dimensões das carretas cadastradas
 const carretas = [
-    { nome: "Carreta de 14m", comprimento: 14, largura: 2.5, alturaMaxima: 3, quantidadeMaxima: 28 },
-    { nome: "Carreta de 14.6m", comprimento: 14.6, largura: 2.5, alturaMaxima: 3, quantidadeMaxima: 28 },
-    { nome: "Carreta de 15m", comprimento: 15, largura: 2.5, alturaMaxima: 3, quantidadeMaxima: 30 },
-    { nome: "Carreta de 15.4m", comprimento: 15.4, largura: 2.5, alturaMaxima: 3, quantidadeMaxima: 30 }
+    { nome: "Carreta de 14m", comprimento: 14, largura: 2.5, alturaMaxima: 2.7, quantidadeMaxima: 28 },
+    { nome: "Carreta de 14.6m", comprimento: 14.6, largura: 2.5, alturaMaxima: 2.7, quantidadeMaxima: 28 },
+    { nome: "Carreta de 15.2m", comprimento: 15.2, largura: 2.5, alturaMaxima: 2.7, quantidadeMaxima: 30 },
+    { nome: "Carreta de 15.4m", comprimento: 15.4, largura: 2.5, alturaMaxima: 2.7, quantidadeMaxima: 30 }
 ];
 
 // Dimensões dos Trucks cadastrados
 const trucks = [
-    { nome: "Truck de 10.4m", comprimento: 10.4, largura: 2.5, alturaMaxima: 4, quantidadeMaxima: 20 },
+    { nome: "Truck de 10.4m", comprimento: 10.4, largura: 2.5, alturaMaxima: 2.7, quantidadeMaxima: 20 },
 ];
 
 // Dimensões de outros cadastrados
