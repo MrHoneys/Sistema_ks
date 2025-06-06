@@ -3,7 +3,6 @@ const carretas = [
     { nome: "Carreta de 14m", comprimento: 14, largura: 2.5, alturaMaxima: 2.7, quantidadeMaxima: 28 },
     { nome: "Carreta de 14.6m", comprimento: 14.6, largura: 2.5, alturaMaxima: 2.7, quantidadeMaxima: 28 },
     { nome: "Carreta de 15.2m", comprimento: 15.2, largura: 2.5, alturaMaxima: 2.7, quantidadeMaxima: 30 },
-    { nome: "Carreta de 15.4m", comprimento: 15.4, largura: 2.5, alturaMaxima: 2.7, quantidadeMaxima: 30 }
 ];
 
 // Dimensões dos Trucks cadastrados
@@ -12,8 +11,8 @@ const trucks = [
 ];
 
 // Dimensões de outros cadastrados
-const outros = [
-    { nome: "Saveiro", comprimento: 1.60, largura:1.0, alturaMaxima:1.2, quantidadeMaxima: 1 }
+const van = [
+    { nome: "VAN 01", comprimento: 3.10, largura: 1.10, alturaMaxima: 1.9, quantidadeMaxima: 3 }
 ];
 
 document.getElementById("pallet-form").addEventListener("submit", function (e) {
@@ -31,8 +30,10 @@ document.getElementById("pallet-form").addEventListener("submit", function (e) {
     const resultsTableBody = document.getElementById("results-table-body");
     resultsTableBody.innerHTML = ""; // Limpa a tabela antes de mostrar novos resultados
 
-    // Seleciona as carretas ou trucks com base no tipo de veículo escolhido
-    const veiculos = vehicleType === 'carreta' ? carretas : trucks;
+    // Seleciona os veículos com base no tipo escolhido
+    const veiculos = vehicleType === 'carreta' ? carretas : 
+                     vehicleType === 'truck' ? trucks : 
+                     van;
 
     // Calcula a capacidade de cada veículo considerando o comprimento, largura e altura do pallet
     veiculos.forEach(veiculo => {
@@ -62,7 +63,7 @@ document.getElementById("pallet-form").addEventListener("submit", function (e) {
         // Calcula a cubagem total (m³)
         const cubagemTotal = length * width * height * totalPallets;
 
-        // Verifica a capacidade na largura (quantos pallets cabem lado a lado na largura do veículo)
+        // Verifica a capacidade na largura
         const cabeDoisLados = (width * 2 <= veiculo.largura);
         const capacidadeLargura = cabeDoisLados ? "CABE 2" : "CABE 1";
 
@@ -70,7 +71,6 @@ document.getElementById("pallet-form").addEventListener("submit", function (e) {
         const row = document.createElement("tr");
         row.classList.add("hover:bg-gray-600");
 
-        // Adiciona os dados do veículo
         row.innerHTML = `
             <td class="px-6 py-3 border-b text-gray-300">${veiculo.nome}</td>
             <td class="px-6 py-3 border-b text-gray-300">${totalPallets}</td>
