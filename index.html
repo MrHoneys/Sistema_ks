@@ -2,12 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Logística</title>
-    <script src="https://cdn.tailwindcss.com "></script>
-    <!-- Fonte futurista opcional -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron :wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-to-b from-gray-900 via-purple-950 to-black min-h-screen flex items-center justify-center py-10 px-4">
@@ -15,44 +14,42 @@
     <!-- Container Principal -->
     <div class="w-full max-w-4xl bg-gray-800/90 backdrop-blur-sm shadow-2xl rounded-2xl p-8 border border-purple-700/30">
 
-        <!-- Título com estilo retrô -->
-        <h1 class="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-10 tracking-wide">Calculadora de Logística</h1>
+        <!-- Título -->
+        <h1 class="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-10 tracking-wide">
+            Calculadora de Logística
+        </h1>
 
         <!-- Formulário -->
         <form id="pallet-form" class="space-y-6">
-            <!-- Seletor de tipo de veículo -->
             <div class="flex flex-col">
                 <label for="vehicle-type" class="text-gray-200 font-semibold mb-1">Escolha o Tipo de Veículo:</label>
-                <select id="vehicle-type" name="vehicle-type"
-                    class="border border-purple-600/70 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 text-gray-100 bg-gray-700/70">
-                    <option value="carreta">🚚 Carreta</option>
-                    <option value="truck">🚛 Truck</option>
-                    <option value="van">🚐 Van</option>
-                </select>
+                    <select id="vehicle-type" name="vehicle-type"
+                        class="border border-purple-600/70 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 text-gray-100 bg-gray-700/70">
+                        <option value="carreta">🚚 Carreta</option>
+                        <option value="truck">🚛 Truck</option>
+                        <option value="van">🚐 Van</option>
+                        <option value="container">🛳️ Container</option>
+                    </select>
             </div>
 
-            <!-- Entrada para o comprimento do pallet -->
             <div class="flex flex-col">
                 <label for="length" class="text-gray-200 font-semibold mb-1">📏 Comprimento do Pallet (m):</label>
                 <input type="number" id="length" name="length" step="0.01" min="0" required
-                    class="border border-purple-600/70 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 text-gray-100 bg-gray-700/70 placeholder-gray-400">
+                    class="border border-purple-600/70 rounded-lg px-4 py-3 text-gray-100 bg-gray-700/70 placeholder-gray-400">
             </div>
 
-            <!-- Entrada para a largura do pallet -->
             <div class="flex flex-col">
                 <label for="width" class="text-gray-200 font-semibold mb-1">📐 Largura do Pallet (m):</label>
                 <input type="number" id="width" name="width" step="0.01" min="0" required
-                    class="border border-purple-600/70 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 text-gray-100 bg-gray-700/70 placeholder-gray-400">
+                    class="border border-purple-600/70 rounded-lg px-4 py-3 text-gray-100 bg-gray-700/70 placeholder-gray-400">
             </div>
 
-            <!-- Entrada para a altura do pallet -->
             <div class="flex flex-col">
                 <label for="height" class="text-gray-200 font-semibold mb-1">🧱 Altura do Pallet (m):</label>
                 <input type="number" id="height" name="height" step="0.01" min="0" required
-                    class="border border-purple-600/70 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 text-gray-100 bg-gray-700/70 placeholder-gray-400">
+                    class="border border-purple-600/70 rounded-lg px-4 py-3 text-gray-100 bg-gray-700/70 placeholder-gray-400">
             </div>
 
-            <!-- Botões para enviar o formulário -->
             <div class="flex flex-wrap gap-4 mt-6">
                 <button type="submit"
                     class="bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-700 hover:to-indigo-800 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition-all hover:scale-105 active:scale-95 focus:outline-none">
@@ -82,13 +79,13 @@
                         </tr>
                     </thead>
                     <tbody id="results-table-body" class="text-gray-200 divide-y divide-gray-600">
-                        <!-- Linhas de resultados serão adicionadas aqui -->
+                        <!-- Resultados aqui -->
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- Área de GIF ou Animação Futurista (exemplo) -->
+        <!-- GIF opcional -->
         <div class="mt-8 text-center opacity-70">
             <img src="assets/loading.gif" alt="Carregando..." class="mx-auto w-16 h-16 hidden" id="loading-gif">
         </div>
@@ -98,6 +95,8 @@
             <div class="max-w-6xl mx-auto text-center">
                 <p class="text-sm mb-3">&copy; 2025 Calculadora de Logística - Todos os direitos reservados.</p>
                 <div class="flex justify-center space-x-6 text-sm">
+                    <a href="index.html"
+                        class="text-purple-400 hover:text-purple-300 transition-colors duration-200">Início</a>
                     <a href="sobre.html"
                         class="text-purple-400 hover:text-purple-300 transition-colors duration-200">Sobre</a>
                     <a href="#"
@@ -107,7 +106,5 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
-</body>
 
-</html>
+    <script src="script.js"></script>
