@@ -46,19 +46,19 @@ document.getElementById("pallet-form").addEventListener("submit", function (e) {
         const palletsPorLargura = Math.floor(veiculo.largura / width);
         const totalPallets = palletsPorComprimento * palletsPorLargura;
 
-        const alturaValida = height <= veiculo.alturaMaxima;
+        const camadas = Math.floor(veiculo.alturaMaxima / height);
+        const alturaValida = camadas >= 1;
         const quantidadeValida = totalPallets <= veiculo.quantidadeMaxima;
 
         let mensagemValidacao = '';
         if (!alturaValida) {
-            mensagemValidacao = "<span class='text-red-500 font-semibold'>❌ Inválido Altura</span>";
+            mensagemValidacao = "<span class='text-red-500 font-semibold'>❌ Altura Excede</span>";
         } else if (!quantidadeValida) {
-            mensagemValidacao = "<span class='text-red-500 font-semibold'>❌ Inválido Quantidade</span>";
+            mensagemValidacao = "<span class='text-red-500 font-semibold'>❌ Quantidade Excede</span>";
         } else {
-            mensagemValidacao = "<span class='text-green-400 font-semibold'>✔️ Válido</span>";
+            mensagemValidacao = "<span class='text-green-400 font-semibold'>✔️ Compatível</span>";
         }
 
-        const camadas = Math.floor(veiculo.alturaMaxima / height);
         const cubagemTotal = length * width * height * totalPallets;
         const cabeDoisLados = (width * 2 <= veiculo.largura);
         const capacidadeLargura = cabeDoisLados ? "CABE 2" : "CABE 1";
@@ -70,7 +70,7 @@ document.getElementById("pallet-form").addEventListener("submit", function (e) {
             <td class="px-6 py-3 border-b text-gray-300">${veiculo.nome}</td>
             <td class="px-6 py-3 border-b text-gray-300">${totalPallets}</td>
             <td class="px-6 py-3 border-b text-gray-300">${height.toFixed(2)}</td>
-            <td class="px-6 py-3 border-b">${camadas} camadas</td>
+            <td class="px-6 py-3 border-b">${camadas} camada(s)</td>
             <td class="px-6 py-3 border-b">${capacidadeLargura}</td>
             <td class="px-6 py-3 border-b text-gray-300">${cubagemTotal.toFixed(3)} m³</td>
             <td class="px-6 py-3 border-b">${mensagemValidacao}</td>
