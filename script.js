@@ -7,7 +7,7 @@ const carretas = [
 
 // Dimensões dos Trucks cadastrados
 const trucks = [
-    { nome: "Truck de 10.4m", comprimento: 10.4, largura: 2.5, alturaMaxima: 2.7, quantidadeMaxima: 20 },
+    { nome: "Truck de 10.4m", comprimento: 10.4, largura: 2.4, alturaMaxima: 2.7, quantidadeMaxima: 20 },
 ];
 
 // Dimensões de VAN
